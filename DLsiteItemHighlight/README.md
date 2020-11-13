@@ -17,3 +17,7 @@ TamperMonkey をインストールしてから下のリンクをクリックし�
 TamperMonkey の拡張機能ボタンから、設定画面が開けます。
 
 CSS で使える色を指定してください。
+
+色はここから作ると便利です。
+
+<https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Colors/Color_picker_tool>
