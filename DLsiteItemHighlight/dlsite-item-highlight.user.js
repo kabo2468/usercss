@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         DLsite Item Highlight
-// @namespace    kabo2468.disujs
+// @namespace    kabo2468.dihujs
 // @version      1.1.0
 // @description  Highlight works which is favorites or bought.
 // @author       kabo2468
