@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DLsite Item Highlight
 // @namespace    kabo2468.disujs
-// @version      1.0.0
+// @version      1.1.0
 // @description  Highlight works which is favorites or bought.
 // @author       kabo2468
 // @downloadURL  https://raw.githubusercontent.com/kabo2468/user-css-script/master/DLsiteItemHighlight/dlsite-item-highlight.user.js
@@ -20,7 +20,7 @@
 // ==/UserScript==
 
 GM_config.init({
-    id: 'config',
+    id: 'dihujsConfig',
     title: 'Script Settings',
     fields: {
         favoriteColor: {
@@ -34,7 +34,7 @@ GM_config.init({
             default: 'rgb(255 155 104 / 60%)'
         }
     },
-    css: '#config, #config_buttons_holder {text-align:center;}',
+    css: '#dihujsConfig, #dihujsConfig_buttons_holder {text-align:center;}',
     events: {
         open: function () {
             GM_config.frame.setAttribute('style', 'display:block;position:fixed;overflow:auto;border:1px solid #000;margin:0;padding:0;left:calc(50% / 2);top:calc(50% / 2);height:50%;width:50%;z-index:9999;');
