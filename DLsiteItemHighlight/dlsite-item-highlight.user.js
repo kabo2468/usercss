@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DLsite Item Highlight
 // @namespace    kabo2468.dihujs
-// @version      1.1.0
+// @version      1.1.1
 // @description  Highlight works which is favorites or bought.
 // @author       kabo2468
 // @downloadURL  https://raw.githubusercontent.com/kabo2468/user-css-script/master/DLsiteItemHighlight/dlsite-item-highlight.user.js
@@ -54,7 +54,8 @@ function run() {
         .forEach(function (element) {
             if (element.querySelector(".btn_favorite_in")) {
                 element.style.backgroundColor = favColor;
-            } else if (element.querySelector(".btn_dl")) {
+            }
+            if (element.querySelector(".btn_dl")) {
                 element.style.backgroundColor = boughtColor;
             }
         });
