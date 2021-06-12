@@ -25,21 +25,13 @@ filterCategory.addEventListener('change', function () {
     let count = Number(countSpan.textContent);
 
     const items = document.getElementsByClassName('_favorite_item') as HTMLCollectionOf<HTMLElement>;
-    const itemsArr = Array.from(items);
-    itemsArr.forEach((i) => {
-        if (checkedCats.length) {
-            const elmCat = i.querySelector('.work_category')?.children[0].textContent || '';
-            if (checkedCats.includes(elmCat)) {
-                const dis = i.style.display;
-                i.style.display = '';
-                if (dis === 'none') count += 1;
-            } else {
-                const dis = i.style.display;
-                i.style.display = 'none';
-                if (dis === '') count -= 1;
-            }
+    Array.from(items).forEach((i) => {
+        const dis = i.style.display;
+        const elmCat = i.querySelector('.work_category')?.children[0].textContent || '';
+        if (checkedCats.length && !checkedCats.includes(elmCat)) {
+            i.style.display = 'none';
+            if (dis === '') count -= 1;
         } else {
-            const dis = i.style.display;
             i.style.display = '';
             if (dis === 'none') count += 1;
         }
