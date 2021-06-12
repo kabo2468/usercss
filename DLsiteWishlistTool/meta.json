@@ -1,7 +1,7 @@
 {
     "name": "DLsite Wishlist Tool",
     "namespace": "kabo2468.dlwtujs",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Tool for DLsite Wishlist",
     "author": "kabo2468",
     "match": "https://www.dlsite.com/*/mypage/wishlist*",

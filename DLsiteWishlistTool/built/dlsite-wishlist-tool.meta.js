@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        DLsite Wishlist Tool
-// @version     1.0.1
+// @version     1.0.2
 // @author      kabo2468
 // @description Tool for DLsite Wishlist
 // @supportURL  https://github.com/kabo2468/user-css-script/issues

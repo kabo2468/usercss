@@ -10,7 +10,8 @@ export function createDLsiteOnlyDiv(text: string, show: boolean): HTMLDivElement
         if (!countDom) return;
         countDom.textContent = String(count);
     });
-    div.append(checkBox, label);
+    label.insertBefore(checkBox, label.firstChild);
+    div.append(label);
     return div;
 }
 
