@@ -1,0 +1,14 @@
+{
+    "name": "DLsite Wishlist Tool",
+    "namespace": "kabo2468.dlwtujs",
+    "version": "1.0",
+    "description": "Tools for DLsite Wishlist",
+    "author": "kabo2468",
+    "match": "https://www.dlsite.com/*/mypage/wishlist/*",
+    "grant": "none",
+    "require": "none",
+    "downloadURL": "https://raw.githubusercontent.com/kabo2468/user-css-script/master/DLsiteWishlistTool/dlsite-wishlist-tool.user.js",
+    "updateURL": "https://raw.githubusercontent.com/kabo2468/user-css-script/master/DLsiteWishlistTool/dlsite-wishlist-tool.user.js",
+    "homepageURL": "https://github.com/kabo2468/user-css-script/tree/master/DLsiteWishlistTool",
+    "supportURL": "https://github.com/kabo2468/user-css-script/issues"
+}
