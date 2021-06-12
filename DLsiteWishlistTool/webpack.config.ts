@@ -1,11 +1,11 @@
 import WebpackUserScript from 'webpack-userscript';
 
-module.exports = {
+export const config = {
     context: __dirname,
     cache: true,
     entry: './src/index.ts',
     output: {
-        filename: 'dlsite-wishlist-tool.js',
+        filename: 'dlsite-wishlist-tool-dev.js',
         path: `${__dirname}/built`,
     },
     module: {

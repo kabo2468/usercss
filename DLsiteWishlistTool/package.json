@@ -4,13 +4,13 @@
   "description": "",
   "main": "built/dlsite-wishlist-tool.user.js",
   "scripts": {
-    "dev": "webpack --mode=development",
-    "clean": "rimraf built",
-    "webpack": "webpack --mode=production",
+    "dev": "webpack --mode=development --config webpack.config.dev.ts",
+    "clean": "rimraf built/*",
+    "webpack": "webpack --mode=production --config webpack.config.prod.ts",
     "tsc:check": "tsc --noEmit",
     "build": "npm run clean && npm run webpack",
     "lint": "eslint . --ext .ts",
-    "watch": "webpack --watch --mode=development"
+    "watch": "webpack --watch --mode=development --config webpack.config.dev.ts"
   },
   "keywords": [],
   "author": "",
