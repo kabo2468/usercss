@@ -1,20 +1,21 @@
 const filterCategory = document.createElement('div');
 
+let checks = createCheckboxes();
+
+const tbody = document.querySelector('#wishlist_work > table > tbody');
+if (tbody) {
+    new MutationObserver(() => {
+        checks = createCheckboxes();
+        filterCategory.innerHTML = '';
+        append(checks);
+    }).observe(tbody, {
+        childList: true,
+        subtree: true,
+    });
+}
+
 const span = document.createElement('span');
 span.textContent = 'カテゴリーフィルター: ';
-
-const categories = [...new Set(Array.from(document.querySelectorAll('.work_category'), (e) => e.children[0].textContent))];
-
-const checks = categories.map((cat) => {
-    const label = document.createElement('label');
-    label.textContent = cat;
-    label.classList.add('dls_wl_tool-cat-label');
-    const checkBox = document.createElement('input');
-    checkBox.setAttribute('type', 'checkbox');
-
-    label.insertBefore(checkBox, label.firstChild);
-    return label;
-});
 
 filterCategory.addEventListener('change', function () {
     const checkedDoms = checks.filter((e) => e.getElementsByTagName('input')[0].checked);
@@ -39,13 +40,31 @@ filterCategory.addEventListener('change', function () {
     countSpan.textContent = String(count);
 });
 
-filterCategory.append(
-    span,
-    ...checks.map((e) => {
-        const div = document.createElement('div');
-        div.append(e);
-        return div;
-    })
-);
+append(checks);
 
 export { filterCategory };
+
+function append(checks: HTMLLabelElement[]) {
+    filterCategory.append(
+        span,
+        ...checks.map((e) => {
+            const div = document.createElement('div');
+            div.append(e);
+            return div;
+        })
+    );
+}
+
+function createCheckboxes() {
+    const categories = [...new Set(Array.from(document.querySelectorAll('.work_category'), (e) => e.children[0].textContent))];
+    return categories.map((cat) => {
+        const label = document.createElement('label');
+        label.textContent = cat;
+        label.classList.add('dls_wl_tool-cat-label');
+        const checkBox = document.createElement('input');
+        checkBox.setAttribute('type', 'checkbox');
+
+        label.insertBefore(checkBox, label.firstChild);
+        return label;
+    });
+}
