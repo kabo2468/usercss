@@ -2,6 +2,8 @@
 
 DLsiteのお気に入りに機能を追加します。
 
+## [インストール](https://github.com/kabo2468/user-css-script/raw/master/DLsiteWishlistTool/built/dlsite-wishlist-tool.user.js)
+
 ## 機能
 
 - 表示している作品数
