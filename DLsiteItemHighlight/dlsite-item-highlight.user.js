@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DLsite Item Highlight
 // @namespace    kabo2468.dihujs
-// @version      1.1.1
+// @version      1.2.0
 // @description  Highlight works which is favorites or bought.
 // @author       kabo2468
 // @downloadURL  https://raw.githubusercontent.com/kabo2468/user-css-script/master/DLsiteItemHighlight/dlsite-item-highlight.user.js
@@ -26,19 +26,20 @@ GM_config.init({
         favoriteColor: {
             label: 'Favorite color',
             type: 'text',
-            default: 'rgb(147 121 255 / 60%)'
+            default: 'rgba(147, 121, 255, 0.6)'
         },
         boughtColor: {
             label: 'Bought color',
             type: 'text',
-            default: 'rgb(255 155 104 / 60%)'
+            default: 'rgba(255, 155, 104, 0.6)'
         }
     },
     css: '#dihujsConfig, #dihujsConfig_buttons_holder {text-align:center;}',
     events: {
         open: function () {
             GM_config.frame.setAttribute('style', 'display:block;position:fixed;overflow:auto;border:1px solid #000;margin:0;padding:0;left:calc(50% / 2);top:calc(50% / 2);height:50%;width:50%;z-index:9999;');
-        }
+        },
+        save: run
     }
 });
 
