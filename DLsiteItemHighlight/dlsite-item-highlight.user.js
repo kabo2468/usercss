@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DLsite Item Highlight
 // @namespace    kabo2468.dihujs
-// @version      1.2.0
+// @version      1.3.0
 // @description  Highlight works which is favorites or bought.
 // @author       kabo2468
 // @downloadURL  https://raw.githubusercontent.com/kabo2468/user-css-script/master/DLsiteItemHighlight/dlsite-item-highlight.user.js
@@ -19,19 +19,70 @@
 // @grant        GM_registerMenuCommand
 // ==/UserScript==
 
+// --------------------
+// Changelog: https://github.com/kabo2468/user-css-script/blob/master/DLsiteItemHighlight/README.md
+// --------------------
+
 GM_config.init({
     id: 'dihujsConfig',
-    title: 'Script Settings',
+    title: 'DLsite Item Highlight Settings',
     fields: {
         favoriteColor: {
             label: 'Favorite color',
-            type: 'text',
-            default: 'rgba(147, 121, 255, 0.6)'
+            type: 'color',
+            default: '#9379ff'
         },
         boughtColor: {
             label: 'Bought color',
-            type: 'text',
-            default: 'rgba(255, 155, 104, 0.6)'
+            type: 'color',
+            default: '#ff9b68'
+        },
+        opacity: {
+            label: 'Opacity (%)',
+            type: 'int',
+            size: 3,
+            min: 0,
+            max: 100,
+            default: 60
+        }
+    },
+    types: {
+        color: {
+            default: null,
+            toNode: function () {
+                const configId = this.configId;
+                const field = this.settings;
+                const value = this.value || this['default'];
+                const id = this.id;
+                const create = this.create;
+                const retNode = create('div', {
+                    className: 'config_var',
+                    id: `${configId}_${id}_var`,
+                    title: field.title
+                });
+                this.format = '#ffffff';
+
+                retNode.appendChild(create('label', {
+                    innerHTML: field.label,
+                    id: `${configId}_${id}_field_label`,
+                    for: `${configId}_field_${id}`,
+                    className: 'field_label'
+                }));
+
+                retNode.appendChild(create('input', {
+                    id: `${configId}_field_${id}`,
+                    type: 'color',
+                    value: value
+                }));
+
+                return retNode;
+            },
+            toValue: function () {
+                return this.wrapper ? this.wrapper.getElementsByTagName('input')[0].value : null;
+            },
+            reset: function () {
+                if (this.wrapper) this.wrapper.getElementsByTagName('input')[0].value = this['default'];
+            }
         }
     },
     css: '#dihujsConfig, #dihujsConfig_buttons_holder {text-align:center;}',
@@ -47,9 +98,22 @@ GM_registerMenuCommand('Configure', () => {
     GM_config.open();
 });
 
+function convertHexToRGBA(hexCode, opacity) {
+    const hex = hexCode.replace('#', '');
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${opacity / 100})`;
+}
+
 function run() {
-    const favColor = GM_config.get('favoriteColor');
-    const boughtColor = GM_config.get('boughtColor');
+    const fav = GM_config.get('favoriteColor');
+    const bought = GM_config.get('boughtColor');
+    const opacity = GM_config.get('opacity');
+
+    const favColor = convertHexToRGBA(fav, opacity);
+    const boughtColor = convertHexToRGBA(bought, opacity);
+
     document
         .querySelectorAll(".search_result_img_box_inner")
         .forEach(function (element) {
