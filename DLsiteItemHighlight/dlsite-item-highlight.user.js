@@ -4,9 +4,9 @@
 // @version      1.3.0
 // @description  Highlight works which is favorites or bought.
 // @author       kabo2468
-// @downloadURL  https://raw.githubusercontent.com/kabo2468/user-css-script/master/DLsiteItemHighlight/dlsite-item-highlight.user.js
-// @updateURL    https://raw.githubusercontent.com/kabo2468/user-css-script/master/DLsiteItemHighlight/dlsite-item-highlight.user.js
-// @homepageURL  https://github.com/kabo2468/user-css-script/tree/master/DLsiteItemHighlight
+// @downloadURL  https://kabo2468.github.io/user-css-script/dlsite-item-highlight.user.js
+// @updateURL    https://kabo2468.github.io/user-css-script/dlsite-item-highlight.user.js
+// @homepageURL  https://kabo2468.github.io/user-css-script/
 // @supportURL   https://github.com/kabo2468/user-css-script/issues
 // @match        https://www.dlsite.com/*/fsr/*
 // @match        https://www.dlsite.com/*/circle/profile/*
@@ -18,10 +18,6 @@
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
 // ==/UserScript==
-
-// --------------------
-// Changelog: https://github.com/kabo2468/user-css-script/blob/master/DLsiteItemHighlight/README.md
-// --------------------
 
 GM_config.init({
     id: 'dihujsConfig',

@@ -7,8 +7,8 @@
     "match": "https://www.dlsite.com/*/mypage/wishlist*",
     "grant": "none",
     "require": "none",
-    "downloadURL": "https://github.com/kabo2468/user-css-script/raw/master/DLsiteWishlistTool/built/dlsite-wishlist-tool.user.js",
-    "updateURL": "https://github.com/kabo2468/user-css-script/raw/master/DLsiteWishlistTool/built/dlsite-wishlist-tool.user.js",
-    "homepageURL": "https://github.com/kabo2468/user-css-script/tree/master/DLsiteWishlistTool",
+    "downloadURL": "https://kabo2468.github.io/user-css-script/dlsite-wishlist-tool.user.js",
+    "updateURL": "https://kabo2468.github.io/user-css-script/dlsite-wishlist-tool.user.js",
+    "homepageURL": "https://kabo2468.github.io/user-css-script/",
     "supportURL": "https://github.com/kabo2468/user-css-script/issues"
 }
