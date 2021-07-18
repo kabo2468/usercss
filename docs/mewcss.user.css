@@ -1,0 +1,35 @@
+/* ==UserStyle==
+@name           Misskey Expand Widget CSS
+@namespace      kabo2468.mewcss
+@version        1.1.1
+@description    Misskey 12.40.0で増えたウィジェットを1つにして広げるCSS
+@author         kabo2468
+@license        MIT
+@homepageURL    https://github.com/kabo2468/usercss/tree/master/MisskeyExpandWidget
+==/UserStyle== */
+
+@-moz-document domain("misskey.io") {
+    /* Contents */
+    .contents {
+        display: flex;
+        width: 100%;
+    }
+    /* Left Widget */
+    .widgets:first-of-type {
+        display: none !important;
+    }
+    /* Right Widget */
+    .widgets {
+        display: inline-flex;
+        flex: 1;
+        flex-wrap: wrap;
+        flex-direction: column;
+        place-content: flex-start;
+        height: calc(100vh - 60px - var(--margin)) !important;
+        padding-top: var(--margin) !important;
+    }
+    /* Widget Margin */
+    ._widget {
+        margin: 0 var(--margin) var(--margin) 0 !important;
+    }
+}
